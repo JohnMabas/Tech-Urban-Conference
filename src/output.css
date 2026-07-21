@@ -811,6 +811,9 @@
     .sm\:h-110 {
       height: calc(var(--spacing) * 110);
     }
+    .sm\:h-\[30\] {
+      height: 30;
+    }
     .sm\:h-\[300px\] {
       height: 300px;
     }
