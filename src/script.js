@@ -10,4 +10,24 @@ btn.addEventListener("click", () => {
 });
 
 
- 
+ async function fetchUsers() {
+    try {
+        const response = await fetch("https://dummyjson.com/posts");
+        const data = await response.json();
+
+        return data.posts.map(post => post.body);
+    } catch (e) {
+        console.log(e.message);
+        return [];
+    }
+}
+
+fetchUsers().then(posts => {
+    const speaker = document.querySelectorAll(".post");
+
+    speaker.forEach((element, index) => {
+        if (posts[index]) {
+            element.innerText = posts[index];
+        }
+    });
+});
