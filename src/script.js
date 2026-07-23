@@ -27,3 +27,29 @@ async function fetchUsers() {
     }
 }
 
+fetchUsers().then((posts) => {
+    const container = document.querySelector(".blogs");
+    const template = document.querySelector("#blog-section");
+
+    posts.forEach((post) => {
+        const clone = template.content.cloneNode(true);
+
+        clone.querySelector(".title").textContent = post.title;
+        clone.querySelector(".body").textContent = post.body;
+        clone.querySelector(".views").textContent = `Views : ${post.views}`;
+        clone.querySelector(".likes").textContent = `Likes: ${post.reactions.likes}`;
+        clone.querySelector(".dislikes").textContent = `Dislikes: ${post.reactions.dislikes}`;
+
+        const tags = clone.querySelector(".tags");
+
+        post.tags.forEach((tag) => {
+            const span = document.createElement("span");
+            span.textContent = tag;
+            span.className =
+                "inline-block bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-sm mr-2 mb-2";
+            tags.appendChild(span);
+        });
+
+        container.appendChild(clone);
+    });
+});
