@@ -11,3 +11,19 @@ btn.addEventListener("click", () => {
 });
 
 
+async function fetchUsers() {
+    try {
+        const response = await fetch("https://dummyjson.com/posts");
+
+        if (!response.ok) {
+            throw new Error("Request failed");
+        }
+
+        const data = await response.json();
+        return data.posts;
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
