@@ -52,35 +52,9 @@
         <button
           id="menuBtn"
           class="md:hidden text-white p-2 -mr-2"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobileMenu"
         >
-          <svg
-            id="iconOpen"
-            width="26"
-            height="26"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          >
-            <path d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-          <svg
-            id="iconClose"
-            width="26"
-            height="26"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            class="hidden"
-          >
-            <path d="M18 6 6 18M6 6l12 12" />
-          </svg>
+        <i id="iconOpen" class="fa-solid fa-bars"></i>
+        <i id="iconClose" class="fa-solid fa-plus hidden"></i>
         </button>
       </header>
 
@@ -89,7 +63,7 @@
         id="mobileMenu"
         class="hidden md:hidden bg-ink border-t border-white/10 px-6 py-6 flex flex-col gap-5 text-base relative z-20"
       >
-        <a href="#" class="hover:text-amber transition-colors">Home</a>
+        <a href="index.html" class="hover:text-amber transition-colors">Home</a>
         <a href="#" class="hover:text-amber transition-colors">Gallery</a>
         <a href="#" class="hover:text-amber transition-colors"
           >Blog</a
@@ -120,7 +94,7 @@
             <p class="body text-gray-600 mb-4"></p>
 
             <div class="mb-4">
-                <strong>Tags:</strong>
+                <!-- <strong>Tags:</strong> -->
                 <div class="tags mt-2"></div>
             </div>
 
