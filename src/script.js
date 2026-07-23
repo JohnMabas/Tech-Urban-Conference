@@ -5,7 +5,6 @@ const iconClose = document.getElementById("iconClose");
 
 btn.addEventListener("click", () => {
   const isHidden = menu.classList.toggle("hidden");
-  btn.setAttribute("aria-expanded", String(!isHidden));
   iconOpen.classList.toggle("hidden");
   iconClose.classList.toggle("hidden");
 });
